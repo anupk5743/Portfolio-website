@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Startup Screen -->
+  <div class="startup-screen" id="startupScreen">
+    <div class="logo">💻</div>
+    <div class="loading-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <p>Loading portfolio...</p>
+  </div>
+
+  <!-- Login Screen -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-container">
+      <div class="login-left">
+        <div class="login-logo">
+          <div class="logo-icon">💻</div>
+          <h1 class="login-title">Welcome Back</h1>
+          <p class="login-subtitle">Access your portfolio dashboard</p>
+          <div class="login-features">
+            <div class="feature-item">
+              <span class="feature-icon">✨</span>
+              <span>Explore Projects</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🎯</span>
+              <span>View Skills</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📄</span>
+              <span>Download Resume</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login-right">
+        <div class="login-form-container">
+          <h2 class="form-title">Sign In</h2>
+          <p class="form-subtitle">Enter your credentials to continue</p>
+          <form class="login-form" onsubmit="event.preventDefault(); login();">
+            <div class="input-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" placeholder="Enter your username" required />
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Enter your password" required />
+            </div>
+            <button type="submit" class="login-btn">
+              <span>Login</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop -->
+  <div class="desktop" id="desktop">
+    <!-- SVG Decorative Elements -->
+    <div class="svg-background">
+      <svg class="svg-pattern" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(0, 120, 215, 0.1);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgba(0, 120, 215, 0.3);stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(0, 120, 215, 0.2);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgba(0, 120, 215, 0.05);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <!-- Animated Circles -->
+        <circle class="svg-circle circle1" cx="100" cy="100" r="60" fill="url(#gradient1)" opacity="0.6">
+          <animate attributeName="cy" values="100;150;100" dur="4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.6;0.8;0.6" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle class="svg-circle circle2" cx="300" cy="200" r="80" fill="url(#gradient2)" opacity="0.4">
+          <animate attributeName="cx" values="300;350;300" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.4;0.6;0.4" dur="5s" repeatCount="indefinite" />
+        </circle>
+        <circle class="svg-circle circle3" cx="800" cy="150" r="70" fill="url(#gradient1)" opacity="0.5">
+          <animate attributeName="cy" values="150;100;150" dur="6s" repeatCount="indefinite" />
+          <animate attributeName="r" values="70;90;70" dur="6s" repeatCount="indefinite" />
+        </circle>
+        <circle class="svg-circle circle4" cx="1000" cy="300" r="50" fill="url(#gradient2)" opacity="0.5">
+          <animate attributeName="cx" values="1000;950;1000" dur="4.5s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="300;350;300" dur="4.5s" repeatCount="indefinite" />
+        </circle>
+        <!-- Animated Polygons -->
+        <polygon class="svg-polygon" points="200,400 250,350 300,400 250,450" fill="url(#gradient1)" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" values="0 250 400;360 250 400" dur="20s" repeatCount="indefinite" />
+        </polygon>
+        <polygon class="svg-polygon" points="900,500 950,450 1000,500 950,550" fill="url(#gradient2)" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" values="360 950 500;0 950 500" dur="25s" repeatCount="indefinite" />
+        </polygon>
+        <!-- Animated Lines/Paths -->
+        <path class="svg-path" d="M 50 600 Q 300 500, 550 600 T 1050 600" stroke="url(#gradient1)" stroke-width="3" fill="none" opacity="0.4">
+          <animate attributeName="d" values="M 50 600 Q 300 500, 550 600 T 1050 600;M 50 600 Q 300 550, 550 600 T 1050 600;M 50 600 Q 300 500, 550 600 T 1050 600" dur="8s" repeatCount="indefinite" />
+        </path>
+        <path class="svg-path" d="M 100 700 Q 400 650, 700 700 T 1100 700" stroke="url(#gradient2)" stroke-width="2" fill="none" opacity="0.3">
+          <animate attributeName="d" values="M 100 700 Q 400 650, 700 700 T 1100 700;M 100 700 Q 400 680, 700 700 T 1100 700;M 100 700 Q 400 650, 700 700 T 1100 700" dur="10s" repeatCount="indefinite" />
+        </path>
+      </svg>
+    </div>
+    <div class="welcome-heading">
+      <h1 class="welcome-title">Welcome to My Portfolio Website</h1>
+      <p class="welcome-subtitle">Explore my work, skills, and projects</p>
+    </div>
+    <!-- Desktop Search -->
+    <div class="desktop-search-top">
+      <div class="desktop-search">
+        <input type="text" id="desktopSearch" placeholder="🔍 Search portfolio..." oninput="searchDesktop()" />
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+    <div class="desktop-content">
+      <div class="icons-container">
+        <div class="icon" onclick="openWindow('about')">
+          <img src="https://cdn-icons-png.flaticon.com/512/1179/1179236.png" />
+          <p>About Me</p>
+        </div>
+        <div class="icon" onclick="openWindow('skills')">
+          <img src="https://cdn-icons-png.flaticon.com/512/1995/1995523.png" />
+          <p>Skills</p>
+        </div>
+        <div class="icon" onclick="openWindow('projects')">
+          <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" />
+          <p>Projects</p>
+        </div>
+        <div class="icon" onclick="openWindow('contact')">
+          <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" />
+          <p>Contact</p>
+        </div>
+        <div class="icon" onclick="openWindow('resume')">
+          <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" />
+          <p>Resume</p>
+        </div>
+        <div class="icon" onclick="openWindow('settings')">
+          <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" />
+          <p>Settings</p>
+        </div>
+        <div class="icon" onclick="openWindow('help')">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" />
+          <p>Help</p>
+        </div>
+      </div>
+      <div class="desktop-right">
+        <div class="home-photo-container">
+          <img src="WhatsApp Image 2025-09-19 at 21.41.46.jpeg" alt="Profile Photo" class="home-photo" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar" id="taskbar">
+    <div class="left-side">
+      <div class="start-button" onclick="toggleStartMenu()">☰ Start</div>
+      <div class="minimized-windows" id="minimizedWindows"></div>
+    </div>
+    <div class="right-side">
+      <div class="system-tray">
+        <div class="tray-icon" title="Network">
+          <span>📶</span>
+        </div>
+        <div class="tray-icon" title="Volume">
+          <span>🔊</span>
+        </div>
+        <div class="tray-icon" title="Battery">
+          <span>🔋</span>
+        </div>
+        <button class="theme-toggle tray-icon" onclick="toggleTheme()" title="Theme">🌞</button>
+        <div class="tray-icon notifications-icon" title="Notifications" onclick="showNotification('No new notifications', 'info')">
+          <span>🔔</span>
+          <span class="notification-badge">0</span>
+        </div>
+        <div class="taskbar-time" id="clock"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start Menu -->
+  <div class="start-menu" id="startMenu">
+    <ul>
+      <li onclick="openWindow('about')">About Me</li>
+      <li onclick="openWindow('skills')">Skills</li>
+      <li onclick="openWindow('projects')">Projects</li>
+      <li onclick="openWindow('contact')">Contact</li>
+      <li onclick="openWindow('resume')">Resume</li>
+      <li onclick="openWindow('settings')">⚙️ Settings</li>
+      <li onclick="openWindow('help')">❓ Help</li>
+    </ul>
+  </div>
+  
+  <!-- Notification Container -->
+  <div class="notification-container" id="notificationContainer"></div>
+
+  <!-- About Window -->
+  <div class="window" id="about" data-icon="https://cdn-icons-png.flaticon.com/512/1179/1179236.png">
+    <div class="window-header" onmousedown="dragStart(event,'about')">
+      <span>About Me</span>
+      <div class="window-buttons">
+        <button onclick="minimizeWindow('about')">—</button>
+        <button onclick="maximizeWindow('about')">▢</button>
+        <button onclick="closeWindow('about')">✖</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>👋 Hi, I'm a <strong>Software Developer</strong> passionate about building full-stack web applications, and mobile applications, and desktop applications.</p>
+      <p>I specialize in C#,JavaScript,Angular,asp.net, and creating clean, efficient code.</p>
+    </div>
+  </div>
+
+  <!-- Skills Window -->
+  <div class="window" id="skills" data-icon="https://cdn-icons-png.flaticon.com/512/1995/1995523.png">
+    <div class="window-header" onmousedown="dragStart(event,'skills')">
+      <span>Skills</span>
+      <div class="window-buttons">
+        <button onclick="minimizeWindow('skills')">—</button>
+        <button onclick="maximizeWindow('skills')">▢</button>
+        <button onclick="closeWindow('skills')">✖</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <ul>
+        <li>💻 JavaScript, C#, asp.net</li>
+        <li>⚛️ React.js,Angular </li>
+        <li>🧠 Node.js, Express, MVC, API </li>
+        <li>🗄️ SQL SERVER, MongoDB,</li>
+        <li>🎨 HTML, CSS, Tailwind, Bootstrap</li>
+        <li>☁️ Git, GitHub, netlify, vercel</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects Window -->
+  <div class="window" id="projects" data-icon="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
+    <div class="window-header" onmousedown="dragStart(event,'projects')">
+      <span>Projects Explorer</span>
+      <div class="window-buttons">
+        <button onclick="minimizeWindow('projects')">—</button>
+        <button onclick="maximizeWindow('projects')">▢</button>
+        <button onclick="closeWindow('projects')">✖</button>
+      </div>
+    </div>
+    <div class="explorer-bar">
+      <div class="path"></div>
+      <input type="text" placeholder="Search projects..." id="search" oninput="filterProjects()" />
+    </div>
+    <div class="window-body projects-grid" id="projectGrid">
+      <div class="project-item" data-name="Hotel Booking System" onclick="openProject('https://yourproject1.com')">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" />
+        <p>Hotel Booking System</p>
+      </div>
+      <div class="project-item" data-name="AI Resume Builder" onclick="openProject('https://yourproject2.com')">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712101.png" />
+        <p>AI Resume Builder</p>
+      </div>
+      <div class="project-item" data-name="Hospital Food Delivery" onclick="openProject('https://yourproject3.com')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" />
+        <p>Hospital Food Delivery</p>
+      </div>
+      <div class="project-item" data-name="Portfolio Website" onclick="openProject('https://yourportfolio.com')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" />
+        <p>Portfolio Website</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Window -->
+  <div class="window" id="contact" data-icon="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+    <div class="window-header" onmousedown="dragStart(event,'contact')">
+      <span>Contact</span>
+      <div class="window-buttons">
+        <button onclick="minimizeWindow('contact')">—</button>
+        <button onclick="maximizeWindow('contact')">▢</button>
+        <button onclick="closeWindow('contact')">✖</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="contact-content">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:anupk5743@gmail.com">anupk5743@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div>
+            <strong>Phone</strong>
+            <p><a href="tel:+919696540736">+919696540736</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <strong>Location</strong>
+            <p>Varanasi, India</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <h3>Connect with me</h3>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/anup-kumar-a2678a254" target="_blank" class="social-link" title="LinkedIn">
+              <span>💼</span> LinkedIn
+            </a>
+            <a href="https://github.com/anupk5743" target="_blank" class="social-link" title="GitHub">
+              <span>🔗</span> GitHub
+            </a>
+            <a href="https://x.com/anupk5743?t=G_YPKj06mYf8wlqY9XgoYw&s=09" target="_blank" class="social-link" title="Twitter">
+              <span>🐦</span> Twitter
+            </a>
+            <a href="https://www.instagram.com/___anup__maurya___?igsh=bXZhMTdzZm1idDI1" target="_blank" class="social-link" title="Instagram">
+              <span>📷</span> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Settings Window -->
+  <div class="window" id="settings" data-icon="https://cdn-icons-png.flaticon.com/512/3524/3524659.png">
+    <div class="window-header" onmousedown="dragStart(event,'settings')">
+      <span>Settings</span>
+      <div class="window-buttons">
+        <button onclick="minimizeWindow('settings')">—</button>
+        <button onclick="maximizeWindow('settings')">▢</button>
+        <button onclick="closeWindow('settings')">✖</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="settings-content">
+        <div class="settings-section">
+          <h3>🎨 Appearance</h3>
+          <div class="setting-item">
+            <label>Theme</label>
+            <button onclick="toggleTheme()" class="setting-btn">Toggle Dark/Light Mode</button>
+          </div>
+          <div class="setting-item">
+            <label>Animation Speed</label>
+            <select id="animationSpeed" onchange="changeAnimationSpeed()">
+              <option value="slow">Slow</option>
+              <option value="normal" selected>Normal</option>
+              <option value="fast">Fast</option>
+            </select>
+          </div>
+        </div>
+        <div class="settings-section">
+          <h3>🔔 Notifications</h3>
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="notificationsEnabled" checked onchange="toggleNotifications()" />
+              Enable Notifications
+            </label>
+          </div>
+        </div>
+        <div class="settings-section">
+          <h3>ℹ️ About</h3>
+          <p>Portfolio Version: 1.0.0</p>
+          <p>Built with HTML, CSS &amp; JavaScript</p>
+          <button onclick="showNotification('Settings saved!', 'success')" class="setting-btn">Save Settings</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Help Window -->
+  <div class="window" id="help" data-icon="https://cdn-icons-png.flaticon.com/512/1828/1828843.png">
+    <div class="window-header" onmousedown="dragStart(event,'help')">
+      <span>Help & Information</span>
+      <div class="window-buttons">
+        <button onclick="minimizeWindow('help')">—</button>
+        <button onclick="maximizeWindow('help')">▢</button>
+        <button onclick="closeWindow('help')">✖</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="help-content">
+        <h3>📖 How to Use</h3>
+        <div class="help-section">
+          <h4>Navigation</h4>
+          <ul>
+            <li>Click desktop icons to open windows</li>
+            <li>Use the Start menu (☰) for quick access</li>
+            <li>Drag window headers to move windows</li>
+            <li>Click — to minimize, ▢ to maximize, ✖ to close</li>
+          </ul>
+        </div>
+        <div class="help-section">
+          <h4>Features</h4>
+          <ul>
+            <li><strong>About Me:</strong> Learn about the developer</li>
+            <li><strong>Skills:</strong> View technical skills</li>
+            <li><strong>Projects:</strong> Browse portfolio projects</li>
+            <li><strong>Contact:</strong> Get in touch via social links</li>
+            <li><strong>Resume:</strong> Download or view resume</li>
+            <li><strong>Settings:</strong> Customize your experience</li>
+          </ul>
+        </div>
+        <div class="help-section">
+          <h4>Keyboard Shortcuts</h4>
+          <ul>
+            <li><kbd>Esc</kbd> - Close active window</li>
+            <li><kbd>Ctrl + T</kbd> - Toggle theme</li>
+            <li><kbd>Ctrl + F</kbd> - Focus search</li>
+          </ul>
+        </div>
+        <div class="help-section">
+          <h4>💡 Tips</h4>
+          <p>• Use the search bar to quickly find content</p>
+          <p>• Enable notifications in Settings for updates</p>
+          <p>• All windows are draggable and resizable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume Window -->
+  <div class="window" id="resume" data-icon="https://cdn-icons-png.flaticon.com/512/337/337946.png">
+    <div class="window-header" onmousedown="dragStart(event,'resume')">
+      <span>Resume</span>
+      <div class="window-buttons">
+        <button onclick="minimizeWindow('resume')">—</button>
+        <button onclick="maximizeWindow('resume')">▢</button>
+        <button onclick="fullscreenResume()">⛶</button>
+        <button onclick="closeWindow('resume')">✖</button>
+      </div>
+    </div>
+    <div class="window-body resume-body">
+      <p>Download, preview, or print my resume below:</p>
+      <div class="resume-buttons">
+        <a href="resume.pdf" download class="resume-btn">⬇️ Download Resume</a>
+        <button onclick="printResume()" class="resume-btn">🖨️ Print Resume</button>
+      </div>
+      <iframe id="resumeFrame" src="resume.pdf" title="Resume Preview"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
